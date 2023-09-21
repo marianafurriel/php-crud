@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 
 // Route::get('/produtos/novo', [ProdutosController::class, 'create']);
-Route::get('/produtos/novo', [ProdutosController::class, 'create'])->name('product.create');
+Route::get('/produtos/novo', [ProdutosController::class, 'create'])->name('product.index');
+Route::post('/produtos/novo', [ProdutosController::class, 'store'])->name('registrar_produto');

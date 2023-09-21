@@ -7,7 +7,17 @@
   <title>Cadastrar novo produto</title>
 </head>
 <body>
-  <form action="">
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
+  <form method="POST" action="{{route('registrar_produto')}}">
+    @csrf
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome">
 
